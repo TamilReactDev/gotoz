@@ -15,6 +15,7 @@ import { Monitor } from './component/Monitor';
 import AcquisitionCard from './component/AcquisitionCard';
 import Feature from './component/Feature';
 import Banner2 from './component/Banner2';
+import '@google/model-viewer';
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
 		<div className='w-full h-screen bg-yellow mx-auto'>
 			<div>
 				<Header />
-				<a href="intent://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Avocado/glTF/Avocado.gltf#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end">Avocado</a>
+
+				
 			</div>
 			<section>
 			<Banner />
@@ -36,8 +38,8 @@ function App() {
 					<Feature />
 				</div>
 			</section>
-
-
+			
+			<Banner2 />
 
 		</div>
 	)

@@ -14,9 +14,7 @@ function Banner2() {
 
 
 			const createAndApplyTexture = async (channel, event) => {
-				if (!event) {
-					material[channel].setTexture(null);
-				} else if (event) {
+				 if (event) {
 					const texture = await modelViewer.createTexture(event);
 					material[channel]['baseColorTexture'].setTexture(null);
 					material[channel]['baseColorTexture'].setTexture(texture);
@@ -24,7 +22,7 @@ function Banner2() {
 				}
 			}
 
-			if (e?.target.value) {
+			if (e) {
 				createAndApplyTexture('pbrMetallicRoughness', e?.target.value);
 			}
 		};
@@ -47,16 +45,15 @@ function Banner2() {
 	return (
 
 		<>
-			 <model-viewer className={{heigh:'200px',width:'200px'}} ref={modelViewerRef} id="blendViewer" ar-placement="floor" camera-controls touch-action="pan-y" ar src={models[currentModelIndex]} alt="A 3D model of an astronaut"
+			 <model-viewer className={{heigh:'200px',width:'200px'}} ref={modelViewerRef} id="blendViewer" ar-placement="floor" camera-controls touch-action="pan-y" ar src={'plain1Tile.glb'} alt="A 3D model of an astronaut"
 				exposure="1"
 			>
 				<div className="controls" style={{ margin:'100px' }}>
-					<label for="opacity">Opacity</label>
-					<input id="opacity" type="range" min="0" max="1" step="0.01" value="1" />
-					<label for="blend-mode">Blend Mode:</label>
+					
 					<select id="blend-mode" ref={selectMode}>
 						<option value="3dTiles.png">Default</option>
 						<option value="3dTiles1.jpg">Skip</option>
+						
 					</select>
 				</div>
 				<div class="progress-bar" slot="progress-bar">

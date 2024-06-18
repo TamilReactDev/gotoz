@@ -113,17 +113,21 @@ const modelViewerRef = useRef(null);
             </effect-composer>
             <div class="controls">
               <label for="blend-mode">Blend Mode:</label>
-              <select id="blend-mode" ref={selectMode}>
-                <option value="3dTiles.png">Default</option>
-                <option value="3dTiles1.jpg">Skip</option>
-               
-              </select>
+              <div className='absolute  right-0 top-10'>
+					<div ref={selectMode}
+						className="  h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100"
+						
+					>
+						<img src="3dTiles.png" alt="tiles" className="h-5 w-5 object-cover" />
+					</div>
+					
+				</div>
             </div>
           </model-viewer>
         </div>
         <div className="anime-pic" style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
           {animeArr.map((item) => (
-            <img key={item.id} src={item.img} alt={`Tile ${item.id}`} onClick={() => selectModel(item.id)} style={{ cursor: "pointer", margin: "5px" }} />
+            <img key={item.id} src={item.img} alt={`Tile ${item.id}`} style={{ cursor: "pointer", margin: "5px" }} />
           ))}
         </div>
       </div>

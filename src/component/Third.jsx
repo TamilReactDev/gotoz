@@ -116,8 +116,8 @@ const modelViewerRef = useRef(null);
               <input id="opacity" type="range" min="0" max="1" step="0.01" value="1" />
               <label for="blend-mode">Blend Mode:</label>
               <select id="blend-mode" ref={selectMode}>
-                <option value="plain1Tile.glb">Default</option>
-                <option value="plain1Tile.glb">Skip</option>
+                <option value="3dTiles.png">Default</option>
+                <option value="3dTiles1.jpg">Skip</option>
                
               </select>
             </div>

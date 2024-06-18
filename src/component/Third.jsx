@@ -107,7 +107,7 @@ const modelViewerRef = useRef(null);
 
 
 
-          <model-viewer ref={modelViewerRef} id="blendViewer" camera-controls touch-action="pan-y" ar src={models[currentModelIndex]} alt="A 3D model of an astronaut">
+          <model-viewer ref={modelViewerRef} id="blendViewer" ar-placement="floor" camera-controls touch-action="pan-y" ar src={models[currentModelIndex]} alt="A 3D model of an astronaut">
             <effect-composer render-mode="quality" msaa="8">
               <color-grade-effect ref={color} contrast="0.5" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
             </effect-composer>

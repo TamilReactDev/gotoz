@@ -112,8 +112,6 @@ const modelViewerRef = useRef(null);
               <color-grade-effect ref={color} contrast="0.5" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
             </effect-composer>
             <div class="controls">
-              <label for="opacity">Opacity</label>
-              <input id="opacity" type="range" min="0" max="1" step="0.01" value="1" />
               <label for="blend-mode">Blend Mode:</label>
               <select id="blend-mode" ref={selectMode}>
                 <option value="3dTiles.png">Default</option>

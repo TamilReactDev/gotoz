@@ -14,10 +14,9 @@ const Third = () => {
 
   const models = ["plain1Tile.glb", "plain1Tile.glb"]; // Array of 3D models
   const [currentModelIndex, setCurrentModelIndex] = useState(0); // Index of the currently displayed model
-  const modelViewer = useRef(null);
-  const selectMode = useRef(null);
-  const color = useRef(null);
 
+  const color = useRef(null);
+  
 
  
 
@@ -33,22 +32,63 @@ const Third = () => {
    
   ];
 
-  const selectModel = (id) => {
-    setCurrentModelIndex(id - 1); // Arrays are zero-indexed, so adjust for the id
-  };
+//   const selectModel = (id) => {
+//     setCurrentModelIndex(id - 1); // Arrays are zero-indexed, so adjust for the id
+//   };
 
-  useEffect(() => {
+//   useEffect(() => {
 
    
 
-    // opacity.addEventListener('input', (e) => blendEffect.opacity = e.target.value);
-    selectMode.current.addEventListener('change', (e) => {
-      color.current.blendMode = e.target.value;
-      console.log(e.target.value)
-    });
+//     // opacity.addEventListener('input', (e) => blendEffect.opacity = e.target.value);
+//     selectMode.current.addEventListener('change', (e) => {
+//       color.current.blendMode = e.target.value;
+//       console.log(e.target.value)
+//     });
     
 
-  }, []);
+//   }, []);
+const modelViewerRef = useRef(null);
+	const selectMode = useRef(null);
+	// const [value, setValue] = useState('3dTiles.png');
+
+	useEffect(() => {
+		const modelViewer = modelViewerRef.current;
+
+		const handleLoad = (e) => {
+			const material = modelViewer.model.materials[0];
+
+
+			const createAndApplyTexture = async (channel, event) => {
+				if (!event) {
+					material[channel].setTexture(null);
+				} else if (event) {
+					const texture = await modelViewer.createTexture(event);
+					material[channel]['baseColorTexture'].setTexture(null);
+					material[channel]['baseColorTexture'].setTexture(texture);
+
+				}
+			}
+
+			if (e?.target.value) {
+				createAndApplyTexture('pbrMetallicRoughness', e?.target.value);
+			}
+		};
+
+		modelViewer.addEventListener('load', handleLoad);
+		selectMode.current.addEventListener('change' ,(e) => {
+			handleLoad(e);
+		})
+
+		// Trigger handleLoad if model is already loaded
+		if (modelViewer.model && modelViewer.model.materials.length > 0) {
+			handleLoad('');
+		}
+
+		return () => {
+			modelViewer.removeEventListener('load', handleLoad);
+		};
+	}, []);
 
   return (
     <div className="third-one-container">
@@ -67,7 +107,7 @@ const Third = () => {
 
 
 
-          <model-viewer ref={modelViewer} id="blendViewer" camera-controls touch-action="pan-y" ar src={models[currentModelIndex]} alt="A 3D model of an astronaut">
+          <model-viewer ref={modelViewerRef} id="blendViewer" camera-controls touch-action="pan-y" ar src={models[currentModelIndex]} alt="A 3D model of an astronaut">
             <effect-composer render-mode="quality" msaa="8">
               <color-grade-effect ref={color} contrast="0.5" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
             </effect-composer>
@@ -76,12 +116,9 @@ const Third = () => {
               <input id="opacity" type="range" min="0" max="1" step="0.01" value="1" />
               <label for="blend-mode">Blend Mode:</label>
               <select id="blend-mode" ref={selectMode}>
-                <option value="default">Default</option>
-                <option value="skip">Skip</option>
-                <option value="add">Add</option>
-                <option value="subtract">Subtract</option>
-                <option value="divide">Divide</option>
-                <option value="negation">Negation</option>
+                <option value="plain1Tile.glb">Default</option>
+                <option value="plain1Tile.glb">Skip</option>
+               
               </select>
             </div>
           </model-viewer>

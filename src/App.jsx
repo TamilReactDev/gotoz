@@ -39,9 +39,9 @@ function App() {
 			</section>
 			 <div className='w-full h-full grid md:grid-cols-3 grid-cols-1 p-2 border-gray-200'>
 				<div className='w-full col-span-2 border-2 border-slate-200 h-[600px]'>
-					<Suspense fallback={null}>
+					{/* <Suspense fallback={null}>
 						<Banner2  />
-					</Suspense>
+					</Suspense> */}
 					
 				</div> 
 				{/* <div className='flex 2 flex-row gap-2 md:flex-col items-center justify-center'>
@@ -67,7 +67,8 @@ function App() {
 				
 			 </div> 
 
-					{/* <Third /> */}
+					<Third />
+					<Banner2  />
 
 		</div>
 	)

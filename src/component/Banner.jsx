@@ -1,11 +1,8 @@
-
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber'
 import React, { Suspense, useRef } from 'react'
-import { useGLTF, PerspectiveCamera, AccumulativeShadows, RandomizedLight, OrbitControls, Stage, Environment, CameraControls } from '@react-three/drei'
-import { Monitor } from './Monitor';
 import Banner2 from './Banner2';
+
 
 
 

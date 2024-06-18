@@ -51,19 +51,8 @@ function Banner2({value}) {
             <div class="progress-bar" slot="progress-bar">
                 <div class="update-bar"></div>
             </div>
-            <button slot="ar-button" className='bg-red-400' id="ar-button">
-                View in your space
-            </button>
-           
-            <div id="ar-prompt">
-                <img src="https://modelviewer.dev/shared-assets/icons/hand.png" />
-            </div>
         </model-viewer>
-         {/* <select name=""  onChange={(e) => setValue(e.target.value)}  id="">
-         <option value="kids.png">tile1</option>
-         <option value="ar.png">Tile2</option>
-         <option value="3dTiles.png">Tile3</option>
-     </select> */}
+         
         </>
         
         

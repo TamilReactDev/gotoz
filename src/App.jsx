@@ -6,12 +6,8 @@ import Banner from './component/Banner';
 import { Header } from './component/Header';
 import HeroSection from './component/HeroSection';
 import styles from "./style";
-
-
-import { Canvas } from '@react-three/fiber'
 import React, { Suspense, useRef, useState } from 'react'
-import { useGLTF, PerspectiveCamera, AccumulativeShadows, RandomizedLight, OrbitControls, Stage, Environment, CameraControls } from '@react-three/drei'
-import { Monitor } from './component/Monitor';
+
 import AcquisitionCard from './component/AcquisitionCard';
 import Feature from './component/Feature';
 import Banner2 from './component/Banner2';
@@ -41,7 +37,10 @@ function App() {
 			</section>
 			<div className='w-full h-full grid md:grid-cols-3 grid-cols-1 p-2 border-gray-200'>
 				<div className='w-full col-span-2 border-2 border-slate-200 h-[600px]'>
-					<Banner2 value={value} />
+					<Suspense fallback={null}>
+						<Banner2 value={value} />
+					</Suspense>
+					
 				</div>
 				<div className='flex 2 flex-row gap-2 md:flex-col items-center justify-center'>
 					<div

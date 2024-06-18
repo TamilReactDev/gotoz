@@ -1,19 +1,11 @@
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React from 'react'
 
-export function Monitor(props) {
-  const { nodes, materials } = useGLTF('/ball.gltf');
-  
+const Monitor = () => {
   return (
-    <group {...props} scale={5} dispose={null}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes['10131_BaseballCap_v02'].geometry}
-        material={nodes['10131_BaseballCap_v02'].material}
-      />
-    </group>
+    <div>
+        hi
+    </div>
   )
 }
 
-useGLTF.preload('/ball.gltf')
+export default Monitor

@@ -46,11 +46,25 @@ function Banner2() {
 			<model-viewer ref={modelViewerRef} className='relative' style={{ width: '100%', height: '100%' }} src="plain1Tile.glb" ar ar-modes="scene-viewer webxr " ar-placement='floor wall' camera-controls tone-mapping="neutral" poster="poster.webp" auto-rotate
 				exposure="1"
 			>
-				<div class="controls" id="color-controls">
-    <button data-color="#ff0000">Red</button>
-    <button data-color="#00ff00">Green</button>
-    <button data-color="#0000ff">Blue</button>
-  </div>
+				<select name="" id="blend-mode">
+					<option value="default">Default</option>
+					<option value="skip">Skip</option>
+					<option value="add">Add</option>
+				</select>
+				{/* <div className='absolute right-0 flex md:flex-col flex-row'>
+					<div
+						className=" md:h-32 md:w-32 h-20 w-20 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100"
+						onClick={() => setValue('3dTiles.png')}
+					>
+						<img src="3dTiles.png" alt="tiles" className="h-full w-full object-cover" />
+					</div>
+					<div
+						className="md:h-32 md:w-32 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100"
+						onClick={() => setValue('3dTiles1.jpg')}
+					>
+						<img src="3dTiles1.jpg" alt="tiles" className="h-full w-full object-cover" />
+					</div>
+				</div> */}
 				<div class="progress-bar" slot="progress-bar">
 					<div class="update-bar"></div>
 				</div>

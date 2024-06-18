@@ -47,7 +47,7 @@ function Banner2() {
 	return (
 
 		<>
-			<model-viewer ref={modelViewerRef} className='relative' style={{ width: '100%', height: '100%' }} src="plain1Tile.glb" ar ar-modes="scene-viewer webxr " ar-placement='floor' camera-controls tone-mapping="neutral" poster="poster.webp" auto-rotate
+			 <model-viewer className={{heigh:'200px',width:'200px'}} ref={modelViewerRef} id="blendViewer" ar-placement="floor" camera-controls touch-action="pan-y" ar src={models[currentModelIndex]} alt="A 3D model of an astronaut"
 				exposure="1"
 			>
 				<div className="controls" style={{ margin:'100px' }}>

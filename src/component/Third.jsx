@@ -91,7 +91,7 @@ const modelViewerRef = useRef(null);
 	}, []);
 
   return (
-    <div className="third-one-container">
+    <div className="h-64 w-64">
       <div>
         <div className="third-one-left">
           {/* <model-viewer
@@ -107,15 +107,17 @@ const modelViewerRef = useRef(null);
 
 
 
-          <model-viewer ref={modelViewerRef} id="blendViewer" ar-placement="floor" camera-controls touch-action="pan-y" ar src={models[currentModelIndex]} alt="A 3D model of an astronaut">
+          <model-viewer className={{heigh:'200px',width:'200px'}} ref={modelViewerRef} id="blendViewer" ar-placement="floor" camera-controls touch-action="pan-y" ar src={models[currentModelIndex]} alt="A 3D model of an astronaut">
             <effect-composer render-mode="quality" msaa="8">
               <color-grade-effect ref={color} contrast="0.5" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
             </effect-composer>
-            <div class="controls">
+            <div class="controls" style={{margin:'20px'}}>
                     <div className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100" >
 						<img src="3dTiles.png" alt="tiles" className="h-5 w-5 object-cover" />
 					</div>
-                    
+                    <div className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100" >
+						<img src="3dTiles.png" alt="tiles" className="h-5 w-5 object-cover" />
+					</div>
 
                     
                     

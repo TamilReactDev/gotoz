@@ -37,13 +37,13 @@ function App() {
 					<Feature />
 				</div>
 			</section>
-			{/* <div className='w-full h-full grid md:grid-cols-3 grid-cols-1 p-2 border-gray-200'>
+			 <div className='w-full h-full grid md:grid-cols-3 grid-cols-1 p-2 border-gray-200'>
 				<div className='w-full col-span-2 border-2 border-slate-200 h-[600px]'>
 					<Suspense fallback={null}>
 						<Banner2  />
 					</Suspense>
 					
-				</div> */}
+				</div> 
 				{/* <div className='flex 2 flex-row gap-2 md:flex-col items-center justify-center'>
 					<div
 						className="block h-32 w-32 p-6 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100"
@@ -65,9 +65,9 @@ function App() {
 					</div>
 				</div> */}
 				
-			{/* </div> */}
+			 </div> 
 
-					<Third />
+					{/* <Third /> */}
 
 		</div>
 	)

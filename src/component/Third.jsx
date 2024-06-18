@@ -112,15 +112,12 @@ const modelViewerRef = useRef(null);
               <color-grade-effect ref={color} contrast="0.5" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
             </effect-composer>
             <div class="controls">
-                    <div className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100">
+                    <div className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100" >
 						<img src="3dTiles.png" alt="tiles" className="h-5 w-5 object-cover" />
 					</div>
-                    <div className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100">
-						<img src="3dTiles.png" alt="tiles" className="h-5 w-5 object-cover" />
-					</div>
-                    <div className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100">
-						<img src="3dTiles.png" alt="tiles" className="h-5 w-5 object-cover" />
-					</div>
+                    
+
+                    
                     
                     
             </div>

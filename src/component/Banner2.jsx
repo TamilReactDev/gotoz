@@ -49,17 +49,15 @@ function Banner2() {
 			<model-viewer style={{ height: '100%', width: '100%',position:"relative" }} ref={modelViewerRef} id="blendViewer" ar-placement="floor wall" camera-controls touch-action="pan-y" ar src={'plain1Tile.glb'} alt="A 3D model of an astronaut"
 				exposure="1"
 			>
-				<div  class="controls absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-200 p-6 border " style={{position: 'absolute', bottom: '0' }}>
-
-					<select id="blend-mode" ref={selectMode}>
-						<option value="3dTiles.png">Default</option>
-						<option value="3dTiles1.jpg">Skip</option>
-					</select>
-					<div className='flex'>
+				<div  class="controls absolute bottom-5 left-1/2 transform -translate-x-1/2">
+					<div className='flex gap-2'>
 						<div onClick={() => setValue('3dTiles1.jpg')} className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100" >
-							<img src="3dTiles.png" alt="tiles" className="h-5 w-5 object-cover" />
+							<img src="3dTiles1.jpg" alt="tiles" className="h-5 w-5 object-cover" />
 						</div>
-						<div className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100" >
+						<div onClick={() => setValue('3dTiles2.jpg')} className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100" >
+							<img src="3dTiles2.jpg" alt="tiles" className="h-5 w-5 object-cover" />
+						</div>
+						<div onClick={() => setValue('3dTiles.png')} className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100" >
 							<img src="3dTiles.png" alt="tiles" className="h-5 w-5 object-cover" />
 						</div>
 					</div>

@@ -76,9 +76,9 @@ const modelViewerRef = useRef(null);
 		};
 
 		modelViewer.addEventListener('load', handleLoad);
-		selectMode.current.addEventListener('change' ,(e) => {
-			handleLoad(e);
-		})
+		// selectMode.current.addEventListener('change' ,(e) => {
+		// 	handleLoad(e);
+		// })
 
 		// Trigger handleLoad if model is already loaded
 		if (modelViewer.model && modelViewer.model.materials.length > 0) {
@@ -112,13 +112,20 @@ const modelViewerRef = useRef(null);
               <color-grade-effect ref={color} contrast="0.5" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
             </effect-composer>
             <div class="controls">
-              <label for="blend-mode">Blend Mode:</label>
-              <select id="blend-mode" ref={selectMode}>
-                <option value="3dTiles.png">Default</option>
-                <option value="3dTiles1.jpg">Skip</option>
-               
-              </select>
+                    <div className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100">
+						<img src="3dTiles.png" alt="tiles" className="h-5 w-5 object-cover" />
+					</div>
+                    <div className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100">
+						<img src="3dTiles.png" alt="tiles" className="h-5 w-5 object-cover" />
+					</div>
+                    <div className="h-10 w-10 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100">
+						<img src="3dTiles.png" alt="tiles" className="h-5 w-5 object-cover" />
+					</div>
+                    
+                    
             </div>
+            
+            
           </model-viewer>
         </div>
         <div className="anime-pic" style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>

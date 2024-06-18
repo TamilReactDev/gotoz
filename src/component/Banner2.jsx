@@ -77,4 +77,17 @@ export default Banner2;
 
 
 
-{/*  */}
+{/* <div className='absolute right-0 flex md:flex-col flex-row'>
+					<div
+						className=" md:h-32 md:w-32 h-20 w-20 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100"
+						onClick={() => setValue('3dTiles.png')}
+					>
+						<img src="3dTiles.png" alt="tiles" className="h-full w-full object-cover" />
+					</div>
+					<div
+						className="md:h-32 md:w-32 p-2 bg-white border border-gray-200 shadow-xl rounded-lg hover:bg-blue-100"
+						onClick={() => setValue('3dTiles1.jpg')}
+					>
+						<img src="3dTiles1.jpg" alt="tiles" className="h-full w-full object-cover" />
+					</div>
+				</div> */}

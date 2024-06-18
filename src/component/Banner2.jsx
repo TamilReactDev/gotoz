@@ -47,10 +47,10 @@ function Banner2() {
 	return (
 
 		<>
-			<model-viewer ref={modelViewerRef} className='relative' style={{ width: '100%', height: '100%' }} src="plain1Tile.glb" ar ar-modes="scene-viewer webxr " ar-placement='floor wall' camera-controls tone-mapping="neutral" poster="poster.webp" auto-rotate
+			<model-viewer ref={modelViewerRef} className='relative' style={{ width: '100%', height: '100%' }} src="plain1Tile.glb" ar ar-modes="scene-viewer webxr " ar-placement='floor' camera-controls tone-mapping="neutral" poster="poster.webp" auto-rotate
 				exposure="1"
 			>
-				<div class="controls">
+				<div className="controls" style={{ margin:'100px' }}>
 					<label for="opacity">Opacity</label>
 					<input id="opacity" type="range" min="0" max="1" step="0.01" value="1" />
 					<label for="blend-mode">Blend Mode:</label>

@@ -42,7 +42,7 @@ function Banner2() {
 	return (
 
 		<>
-			<model-viewer style={{ height: '100%', width: '100%',position:"relative" }} ref={modelViewerRef} id="blendViewer" ar-placement="floor wall" camera-controls touch-action="pan-y"  src={'plain1Tile.glb'} alt="A 3D model of a Tiles"
+			<model-viewer style={{ height: '100%', width: '100%',position:"relative" }} ref={modelViewerRef} id="blendViewer" ar-placement="floor wall" camera-controls touch-action="pan-y" ar src={'plain1Tile.glb'} alt="A 3D model of a Tiles"
 				exposure="1"
 			>
 				<div  class="controls absolute bottom-5 left-1/2 transform -translate-x-1/2">

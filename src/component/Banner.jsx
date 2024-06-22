@@ -1,7 +1,7 @@
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import React, { Suspense, useRef } from 'react'
-import Banner2 from './Banner2';
+import Cap from './Cap';
 
 
 
@@ -23,14 +23,14 @@ const Banner = () => {
 		<section>
 			<div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-2">
 				<div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-16">
-					<motion.div 
+					<div 
 					initial={{ opacity: 0, y: 100 }}
-        			animate={{ opacity: imageInView ? 1 : 0, y: imageInView ? 50 : 100 }}
+        			whileInView={{ opacity: 1, y: 50}}
         			transition={{ duration: 1 }}
         			ref={imageRef} className="lg:order-last lg:h-full  justify-items-center">
 						<div className="iphone-x">
                                         <div className="screen">
-                                            <Banner2 />
+                                            <Cap />
                                         </div>
                                         <i></i>
                                         <b></b>
@@ -38,10 +38,11 @@ const Banner = () => {
                                         <span></span>
                                         <span></span>
                                     </div>
-					</motion.div>
+					</div>
 
-					<motion.div initial={{ opacity: 0 }}
-						animate={{ opacity: textInView ? 1 : 0 }}
+					<motion.div 
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
 						transition={{ duration: 1 }}
 						ref={textRef} className="lg:py-24">
 						<h2 className="text-3xl font-bold text-black sm:text-4xl">

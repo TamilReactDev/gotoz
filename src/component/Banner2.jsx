@@ -21,9 +21,6 @@ function Banner2() {
 
 				}
 			}
-			console.log(value)
-
-			
 			createAndApplyTexture('pbrMetallicRoughness', value);
 			
 		});
@@ -32,7 +29,6 @@ function Banner2() {
 		// selectMode.current.addEventListener('change', (e) => {
 			// handleLoad(value);
 		// })
-	console.log('render')
 		// Trigger handleLoad if model is already loaded
 		if (modelViewer.model && modelViewer.model.materials.length > 0) {
 			handleLoad();
@@ -46,7 +42,7 @@ function Banner2() {
 	return (
 
 		<>
-			<model-viewer style={{ height: '100%', width: '100%',position:"relative" }} ref={modelViewerRef} id="blendViewer" ar-placement="floor wall" camera-controls touch-action="pan-y" ar src={'plain1Tile.glb'} alt="A 3D model of an astronaut"
+			<model-viewer style={{ height: '100%', width: '100%',position:"relative" }} ref={modelViewerRef} id="blendViewer" ar-placement="floor wall" camera-controls touch-action="pan-y"  src={'plain1Tile.glb'} alt="A 3D model of a Tiles"
 				exposure="1"
 			>
 				<div  class="controls absolute bottom-5 left-1/2 transform -translate-x-1/2">

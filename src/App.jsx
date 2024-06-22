@@ -6,7 +6,7 @@ import Banner from './component/Banner';
 import { Header } from './component/Header';
 import HeroSection from './component/HeroSection';
 import styles from "./style";
-import React, { Suspense, useRef, useState } from 'react'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
 
 import AcquisitionCard from './component/AcquisitionCard';
 import Feature from './component/Feature';
@@ -22,6 +22,7 @@ function App() {
 	const ref = useRef();
 	const [value, setValue] = useState('3dTiles.png');
 
+
 	return (
 		<div className='w-full h-screen bg-yellow mx-auto'>
 			<div>
@@ -30,7 +31,7 @@ function App() {
 
 			</div>
 			<section>
-				{/* <Banner /> */}
+				<Banner />
 			</section>
 			<section className='mt-16'>
 				<div className={`${styles.boxWidth} p-2`}>
@@ -67,7 +68,7 @@ function App() {
 				
 			 </div> 
 
-					<Third />
+					{/* <Third /> */}
 					{/* <Banner2  /> */}
 
 		</div>
